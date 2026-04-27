@@ -1,30 +1,28 @@
 Vector
 =========
 
-This role can istall Vector on EL
+Ansible-роль для установки и настройки Vector
 
-Role Variables
---------------
+Переменные используемые ролью
+-----------------------------
 
-| Vars | Description |
-|--------|----------------|
-| vector_version | Version of Vector to install |
+| переменные | Описание |
+|---------------|-----------------|
+| vector_version | Версия Vector для установки |
 
-Example Playbook
-----------------
+Пример использования роли
+-------------------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+- hosts: servers
+  roles:
+    - vector-role
 
-    - hosts: servers
-      roles:
-         - { role: vector }
-
-License
--------
+Лицензия
+--------
 
 MIT
 
-Author Information
-------------------
+Информация об авторе
+--------------------
 
-Alexander Rakhmanov
+Александр Рахманов
