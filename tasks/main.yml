@@ -1,19 +1,9 @@
 ---
-- name: Add user vector
-  user:
-    name: vector
-
-- name: Create Directories
+- name: Ensure vector config directory exists
   file:
-    path: "{{ item }}"
+    path: "{{ vector_config_dir }}"
     state: directory
-    owner: vector
-    group: vector
-    mode: 0755
-  loop:
-    - '/vector/'
-    - '/var/lib/vector'
-    - {{ vector_config_dir }}
+    mode: '0755'
 
 - name: Download Vector .deb package
   get_url:
@@ -31,11 +21,8 @@
     dest: "{{ vector_config_file }}"
     mode: '0644'
 
-- name: Deploy vector config from template
-  template:
-    src: vector.yaml.j2
-    dest: "{{ vector_config_file }}"
-    mode: '0644'
-
-- name: "Notify Handlers Now"
-  meta: flush_handlers
+- name: Enable and start vector
+  systemd:
+    name: vector
+    enabled: true
+    state: started

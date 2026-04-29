@@ -13,7 +13,7 @@ Ansible-роль для установки и настройки Vector
 Пример использования роли
 -------------------------
 
-    - hosts: servers
+    - hosts: vector
       roles:
          - vector-role
 
