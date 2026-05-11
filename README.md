@@ -15,7 +15,7 @@ Ansible-роль для установки и настройки Vector
 
     - hosts: vector
       roles:
-         - vector-role
+         - vector
 
 Лицензия
 --------

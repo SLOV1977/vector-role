@@ -1,5 +1,2 @@
 ---
 vector_version: "0.50.0"
-vector_config_dir: "/etc/vector"
-vector_config_file: "{{ vector_config_dir }}/vector.toml"
-vector_download_url: "https://packages.timber.io/vector/{{ vector_version }}/vector_{{ vector_version }}-1_amd64.deb"
